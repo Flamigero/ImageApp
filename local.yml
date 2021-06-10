@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: './compose/django/Dockerfile'
+    image: image_app_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+    command: sh ./init.sh
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - image_app_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  image_app_postgres_data: {}
