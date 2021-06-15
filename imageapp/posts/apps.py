@@ -2,6 +2,7 @@
 Posts app
 """
 
+# Django
 from django.apps import AppConfig
 
 class PostsAppConfig(AppConfig):
