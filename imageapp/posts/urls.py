@@ -7,14 +7,14 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 # Views
-from imageapp.posts.views import ListPostsAPIView, ListPostsGeneric, PostAllViewSet, PostViewSet
+from imageapp.posts.views import ListPostsAPIView, ListPostsGeneric, PostViewSet
 
 router = DefaultRouter()
-router.register(r'postsAll', PostAllViewSet, basename='postsAll')
+#router.register(r'posts', PostAllViewSet, basename='postsAll')
 router.register(r'posts/(?P<user_id>[a-z0-9]+)', PostViewSet, basename='posts')
 
 urlpatterns = [
-    path('listPosts/', ListPostsAPIView.as_view()),
+    path('posts/', ListPostsAPIView.as_view()),
     path('listPosts2/', ListPostsGeneric.as_view())
 ]
 urlpatterns += router.urls
