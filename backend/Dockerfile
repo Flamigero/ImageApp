@@ -19,11 +19,11 @@ RUN apk update \
 WORKDIR /app
 
 # Requirements
-COPY requirements.txt /app/
+COPY ./backend/requirements.txt /app/
 RUN pip install -r requirements.txt
 
 # Entrypoint
-COPY init.sh /app/
+COPY ./backend/init.sh /app/
 RUN chmod +x init.sh
 
-COPY . /app/
+COPY ./backend/ /app/
