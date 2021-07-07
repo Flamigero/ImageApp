@@ -1,0 +1,61 @@
+/* Generals */
+body, html {
+    background-color: rgba(var(--b3f,250,250,250),1);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+.title {
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 2rem;
+    padding: 1em 0;
+}
+
+/* LoginScreen */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.login article {
+    background-color: white;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 350px;
+    padding-bottom: 1em;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+.login article p {
+    width: 270px;
+    margin: 0 auto;
+}
+.login article a{
+    color: rgba(var(--d69,0,149,246),1);
+}
+.login article:nth-child(1) form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login article:nth-child(1) form input {
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 9px 0 7px 8px;
+    width: 260px;
+    margin-top: 1em;
+}
+.login article:nth-child(1) form input[type='submit'] {
+    border: 1px solid transparent;
+    background-color: #0095f6;
+    color: white;
+    height: 30px;
+    padding: 0;
+}
+.login article:nth-child(2) {
+    padding: 1em 0;
+}
