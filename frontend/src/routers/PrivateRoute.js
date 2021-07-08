@@ -14,7 +14,7 @@ const PrivateRout = ({
                 ?
                 <Component {...props} />
                 :
-                <Redirect to="/login" />
+                <Redirect to="/auth/login" />
             )}
         />
     )
