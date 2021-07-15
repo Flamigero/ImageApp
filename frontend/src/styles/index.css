@@ -2,8 +2,8 @@
 body, html {
     background-color: rgba(var(--b3f,250,250,250),1);
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 .title {
     font-family: 'Otomanopee One', sans-serif;
@@ -58,4 +58,66 @@ body, html {
 }
 .login article:nth-child(2) {
     padding: 1em 0;
+}
+
+/* Navbar */
+nav {
+    background-color: white;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li {
+    padding-left: 1.5em;
+}
+nav ul li i {
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+/* HomeScreen */
+.home {
+    margin: 2em auto;
+    width: 614px;
+}
+.home article {
+    background-color: white;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    margin-bottom: 2em;
+}
+.home article div {
+    height: 60px;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home article figure {
+    height: 614px;
+    background-color: thistle;
+}
+.home article figure img {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+.home article ul {
+    padding: 1em;
+}
+.home article ul li:nth-child(1) i {
+    padding-right: 0.5em;
+    font-size: 1.3rem;
+}
+.home article ul li:nth-child(2) {
+    margin-top: 1em;
+}
+.home article ul li:nth-child(2) strong {
+    font-weight: bold;
 }
