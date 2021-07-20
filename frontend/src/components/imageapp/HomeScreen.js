@@ -9,7 +9,7 @@ const HomeScreen = () => {
                 <article>
                     <div>Username</div>
                     <figure>
-                        <img src="" alt=""/>
+                        <img src="https://picsum.photos/id/768/500/500" alt="" />
                     </figure>
                     <ul>
                         <li>
@@ -25,7 +25,7 @@ const HomeScreen = () => {
                 <article>
                     <div>Username</div>
                     <figure>
-                        <img src="" alt=""/>
+                        <img src="https://picsum.photos/id/546/500/500" alt="" />
                     </figure>
                     <ul>
                         <li>

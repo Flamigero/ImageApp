@@ -1,7 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import { logout } from '../../actions/auth';
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());
+    }
+
     return (
         <nav>
             <h1 className='title'>ImageApp</h1>
@@ -11,10 +19,13 @@ const Navbar = () => {
                     <Link to='/'><i className="fas fa-home"></i></Link>
                 </li>
                 <li>
-                    <Link to='/'><i className="fas fa-user"></i></Link>
+                    <Link to='/profile'><i className="fas fa-user"></i></Link>
                 </li>
                 <li>
-                    <i className="fas fa-sign-out-alt"></i>
+                    <i 
+                        className="fas fa-sign-out-alt"
+                        onClick={handleLogout}
+                    ></i>
                 </li>
             </ul>
         </nav>

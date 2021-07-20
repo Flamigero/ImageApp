@@ -5,8 +5,8 @@ import {
     Switch,
     Redirect
   } from "react-router-dom";
-import HomeScreen from '../components/imageapp/HomeScreen';
 import AuthRouter from './AuthRouter';
+import ImageAppRouter from './ImageAppRouter';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -23,9 +23,8 @@ const AppRouter = () => {
                     isAuthenticated={!!uid}
                 />
                 <PrivateRoute 
-                    exact
                     path="/" 
-                    component={HomeScreen}
+                    component={ImageAppRouter}
                     isAuthenticated={!!uid}
                 />
             

@@ -101,7 +101,6 @@ nav ul li i {
 }
 .home article figure {
     height: 614px;
-    background-color: thistle;
 }
 .home article figure img {
     height: 100%;
@@ -120,4 +119,55 @@ nav ul li i {
 }
 .home article ul li:nth-child(2) strong {
     font-weight: bold;
+}
+
+/* ProfileScreen */
+.profile {
+    margin: 2em auto;
+    max-width: 935px;
+}
+.profile article:nth-child(1) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+.profile article:nth-child(1) figure {
+    margin-right: 2em;
+}
+.profile article:nth-child(1) figure img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+.profile article:nth-child(1) h2 {
+    font-size: 2rem;
+    padding-bottom: 0.8em;
+}
+.profile article:nth-child(1) h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+.profile article:nth-child(1) h5 {
+    padding-bottom: 0.5em;
+}
+.profile article:nth-child(1) p {
+    max-width: 450px;
+}
+.profile article:nth-child(2) {
+    border-top: 1px solid rgba(var(--b38,219,219,219),1);
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-top: 2em;
+    place-items: center;
+}
+.profile article:nth-child(2) figure {
+    height: 300px;
+    width: 300px;
+}
+.profile article:nth-child(2) figure img {
+    height: 100%;
+    width: 100%;
 }
