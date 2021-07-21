@@ -2,12 +2,14 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import { logout } from '../../actions/auth';
+import { imageClear } from '../../actions/image';
 
 const Navbar = () => {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
         dispatch(logout());
+        dispatch(imageClear());
     }
 
     return (

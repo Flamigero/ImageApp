@@ -5,4 +5,5 @@ export const types = {
 
     imageLoad: '[image] Load',
     imageNew: '[image] Add new',
+    imageClear: '[image] Clear'
 }
