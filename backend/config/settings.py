@@ -7,7 +7,9 @@ SECRET_KEY = 'django-insecure-f95qc*r)mornclr+(iwiu62bl6whg-%$w@5p1+*g6ly=wto9y@
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -19,7 +21,8 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'corsheaders'
 ]
 LOCAL_APPS = [
     'imageapp.users.apps.UsersAppConfig',
@@ -32,6 +35,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
