@@ -5,7 +5,7 @@ const Post = ({path, description}) => {
         <article>
             <div>Username</div>
             <figure>
-                <img src={path} alt="" />
+                <img src={`http://localhost:8000${path}`} alt="" />
             </figure>
             <ul>
                 <li>

@@ -12,7 +12,7 @@ class ValidateToken:
 
     def __call__(self, request):
         response = self.get_response(request)
-        path = request.path
+        path = request.path.split('/')[1]
         pathPost = 'posts'
         
         if path.find(pathPost) != -1:
