@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Post = ({path, description}) => {
+const Post = ({path, description, user}) => {
     return (
         <article>
-            <div>Username</div>
+            <div>{user.username}</div>
             <figure>
                 <img src={`http://localhost:8000${path}`} alt="" />
             </figure>
@@ -13,7 +13,7 @@ const Post = ({path, description}) => {
                     <i className="fas fa-comment"></i>
                 </li>
                 <li>
-                    <p><strong>User</strong> {description}</p>
+                    <p><strong>{user.username}</strong> {description}</p>
                 </li>
             </ul>
         </article>

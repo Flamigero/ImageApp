@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { startLoad } from '../../actions/image';
 import Navbar from '../ui/Navbar'
 
 const ProfileScreen = () => {
+    const dispatch = useDispatch();
+    const {uid, username, name} = useSelector(state => state.auth);
+    const {images} = useSelector(state => state.image);
+
+    useEffect(() => {
+        dispatch(startLoad(uid));
+    }, [dispatch, uid])
+
     return (
         <>
             <Navbar />
@@ -12,9 +22,9 @@ const ProfileScreen = () => {
                     </figure>
 
                     <div>
-                        <h2>Username</h2>
-                        <h3>Name Surname</h3>
-                        <h5>2 posts</h5>
+                        <h2>{username}</h2>
+                        <h3>{name}</h3>
+                        <h5>{images.length} posts</h5>
                         <p>
                             Proident esse culpa deserunt sunt nostrud duis. Ex ipsum nisi in duis Lorem cillum et enim sunt. 
                             Aute laboris veniam est aliquip fugiat dolore est laboris ad non ullamco id ad.
@@ -23,21 +33,13 @@ const ProfileScreen = () => {
                 </article>
 
                 <article>
-                    <figure>
-                        <img src="https://picsum.photos/id/1/200/200" alt="" />
-                    </figure>
-
-                    <figure>
-                        <img src="https://picsum.photos/id/2/200/200" alt="" />
-                    </figure>
-
-                    <figure>
-                        <img src="https://picsum.photos/id/3/200/200" alt="" />
-                    </figure>
-
-                    <figure>
-                        <img src="https://picsum.photos/id/4/200/200" alt="" />
-                    </figure>
+                    {
+                        images.map(image => (
+                            <figure key={image.pk}>
+                                <img src={`http://localhost:8000${image.photo}`} alt="" />
+                            </figure>
+                        ))
+                    }
                 </article>
             </section>
         </>

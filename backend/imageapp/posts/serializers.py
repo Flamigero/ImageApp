@@ -7,9 +7,12 @@ from rest_framework import serializers
 from imageapp.users.models import User
 from imageapp.posts.models import Post
 
+# Serializers
+from imageapp.users.serializers import UserModelSerializer
+
 class PostSerializer(serializers.Serializer):
     pk = serializers.IntegerField()
-    user_id = serializers.CharField()
+    user_id = UserModelSerializer()
     photo = serializers.ImageField()
     description = serializers.CharField()
 

@@ -18,7 +18,7 @@ const HomeScreen = () => {
             <Navbar />
             <section className='home'>
                 {images.map(image => (
-                    <Post key={image.pk} path={image.photo} description={image.description} />
+                    <Post key={image.pk} path={image.photo} description={image.description} user={image.user_id} />
                 ))}
             </section>
         </>
