@@ -171,3 +171,49 @@ nav ul li i {
     height: 100%;
     width: 100%;
 }
+
+/* Add Post */
+.addPost {
+    background-color: transparent;
+    border: 0;
+}
+
+/* New Post */
+.newPost {
+    display: flex;
+    flex-direction: column;
+}
+.newPost h3 {
+    border-bottom: 1px solid black;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.3em;
+    text-transform: uppercase;
+}
+.newPost label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+.newPost label i {
+    margin-right: 0.3em;
+}
+.newPost input {
+    margin-bottom: 1.5em;
+}
+.newPost input:nth-child(5) {
+    border: 1px solid rgba(var(--ca6,219,219,219),1);
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 9px 0 7px 8px;
+}
+.newPost button {
+    background-color: #0095f6;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: white;
+    height: 30px;
+    margin: 0 auto;
+    width: 100%;
+}

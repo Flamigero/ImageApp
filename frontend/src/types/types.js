@@ -6,5 +6,8 @@ export const types = {
     imageLoad: '[image] Load',
     imageLoadUser: '[image] Load User',
     imageNew: '[image] Add new',
-    imageClear: '[image] Clear'
+    imageClear: '[image] Clear',
+
+    uiModalOpen: '[ui] Open Modal',
+    uiModalClose: '[ui] Close Modal'
 }
