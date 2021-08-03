@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { fetchConToken } from "../helpers/fetch";
+import { fetchConToken, fetchFormDataToken } from "../helpers/fetch";
 import { types } from "../types/types";
 
 export const startLoad = (uid = null) => {
@@ -31,4 +31,26 @@ export const imageLoad = (images) => ({
 
 export const imageClear = () => ({
     type: types.imageClear
+})
+
+export const startAdd = (user_id, photo, description) => {
+    return async(dispatch) => {
+        const resp = await fetchFormDataToken('posts/', {user_id, photo, description}, 'POST');
+        const body = await resp.json();
+
+        if(resp.status === 201)
+        {
+            dispatch(imageAdd(body));
+        }
+        else
+        {
+            console.log(resp);
+            Swal.fire('Error', 'Create error', 'error')
+        }
+    }
+}
+
+export const imageAdd = (image) => ({
+    type: types.imageNew,
+    payload: image
 })

@@ -38,6 +38,7 @@ class PostCreateSerializer(serializers.Serializer):
         validated_data.pop('user_id')
         validated_data['user_id']=user
         post = Post.objects.create(**validated_data)
+        
         return post
 """
 class PostCreateSerializer(serializers.ModelSerializer):

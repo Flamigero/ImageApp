@@ -46,7 +46,40 @@ const fetchConToken = (endpoint, data, method='GET') => {
     }
 };
 
+const fetchFormDataToken = (endpoint, data, method='POST') => {
+    const url = `${baseUrl}/${endpoint}`;
+    const token = localStorage.getItem('token') || '';
+
+    const formData = new FormData();
+    for(const prop in data)
+    {
+        formData.append(prop, data[prop]);
+    }
+    
+    if(method === 'GET')
+    {
+        return fetch(url, {
+            method,
+            headers: {
+                'Content-type': 'application/json',
+                'x-token': token
+            }
+        });
+    }
+    else
+    {
+        return fetch(url, {
+            method,
+            headers: {
+                'x-token': token
+            },
+            body: formData
+        });
+    }
+}
+
 export {
     fetchSinToken,
-    fetchConToken
+    fetchConToken,
+    fetchFormDataToken
 }

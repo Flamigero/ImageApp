@@ -182,6 +182,7 @@ nav ul li i {
 .newPost {
     display: flex;
     flex-direction: column;
+    width: 400px;
 }
 .newPost h3 {
     border-bottom: 1px solid black;

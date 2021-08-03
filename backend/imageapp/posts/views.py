@@ -22,7 +22,7 @@ class ListPostsAPIView(APIView):
     parser_classes = (FormParser, MultiPartParser)
 
     def get(self, request, format=None):
-        posts = Post.objects.all()
+        posts = Post.objects.all().order_by('-created_at')
         serializer = PostSerializer(posts, many=True)
 
         return Response(serializer.data)
@@ -30,8 +30,9 @@ class ListPostsAPIView(APIView):
     def post(self, request, format=None):
         serializer = PostCreateSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            post = serializer.save()
+            serializerReturn = PostSerializer(post)
+            return Response(serializerReturn.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

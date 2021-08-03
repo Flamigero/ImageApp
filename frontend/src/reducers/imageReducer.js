@@ -13,6 +13,11 @@ export const imageReducer = (state=initialState, action) => {
 
         case types.imageClear:
             return initialState
+
+        case types.imageNew:
+            return {
+                images: [action.payload, ...state.images]
+            }
     
         default:
             return state;
